@@ -14,11 +14,11 @@
 ### Install Project
 
 ```
-$ ygit clone https://github.com/regenrek/nuxt-lazysizes-aspect-ratio-blur
+$ git clone https://github.com/regenrek/nuxt-lazysizes-aspect-ratio-blur
 
-$ yyarn
+$ yarn
 
-$ yyarn dev
+$ yarn dev
 ```
 
 ### Usage
