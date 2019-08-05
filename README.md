@@ -13,7 +13,7 @@
 
 ### Install Project
 
-```
+```bash
 $ git clone https://github.com/regenrek/nuxt-lazysizes-aspect-ratio-blur
 
 $ yarn
@@ -23,7 +23,7 @@ $ yarn dev
 
 ### Usage
 
-```
+```html
 <template>
   <div>
     <!-- blur up + optimizied image lazyload -->
