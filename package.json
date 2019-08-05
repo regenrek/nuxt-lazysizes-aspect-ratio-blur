@@ -1,7 +1,7 @@
 {
   "name": "nuxtjs-lazysizes-aspect-ratio-blur",
   "version": "1.0.0",
-  "description": "Nuxt starter for CodeSandBox",
+  "description": "This is an example of nuxtjs with lazysizes + aspect ratio + blur",
   "author": "Nuxt.js Team",
   "private": true,
   "scripts": {

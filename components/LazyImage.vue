@@ -1,24 +1,17 @@
 <template>
-  <figure
-    :class="[objectFit !== '' ? 'is-' + objectFit : '']"
-    :data-aspect-ratio="aspectRatio"
-  >
+  <figure :class="[objectFit !== '' ? 'is-' + objectFit : '']" :data-aspect-ratio="aspectRatio">
     <picture v-if="fetchMode === 'srcset'">
-      <source :data-srcset="image.webp" type="image/webp" />
-      <source :data-srcset="image.opt" type="image/jpg" />
-      <img
-        :src="image.placeholder"
-        class="lazyload blur"
-        :data-src="image.opt"
-      />
+      <source :data-srcset="image.webp" type="image/webp">
+      <source :data-srcset="image.opt" type="image/jpg">
+      <img :src="image.placeholder" class="lazyload blur" :data-src="image.opt">
     </picture>
     <img
       v-else-if="fetchMode === 'img'"
       :src="image.placeholder"
       class="lazyload blur"
       :data-src="image.opt"
-    />
-    <img v-else class="lazyload" :data-src="dataSrc" />
+    >
+    <img v-else class="lazyload" :data-src="dataSrc">
   </figure>
 </template>
 
@@ -61,6 +54,15 @@ export default {
         colors: require(`~/assets/images/${this.dataSrc}?lqip-colors`),
         webp: require(`~/assets/images/${this.dataSrc}?webp`)
       };
+    }
+  },
+  methods: {
+    test() {
+      try {
+        let x = require(`~/assets/images/${this.dataSrc}?original`);
+      } catch (e) {
+        console.log("error");
+      }
     }
   }
 };

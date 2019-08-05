@@ -1,11 +1,9 @@
-const path = require("path");
-
 export default {
   /*
    ** Rendering mode
    ** Doc: https://nuxtjs.org/api/configuration-mode
    */
-  mode: "universal",
+  mode: "spa",
 
   /*
    ** Headers of the page
@@ -29,7 +27,7 @@ export default {
    ** Global CSS
    ** Doc: https://nuxtjs.org/api/configuration-css
    */
-  css: [],
+  css: ["~/assets/styles/main.css"],
 
   /*
    ** Plugins to load before mounting the App
@@ -37,7 +35,7 @@ export default {
    */
   plugins: [
     {
-      src: "~/plugins/lazyload.js",
+      src: "~/plugins/lazysizes.js",
       ssr: false
     }
   ],
@@ -90,7 +88,6 @@ export default {
       // extractCSS: true,
       plugins: {
         "postcss-import": {},
-        tailwindcss: path.resolve(__dirname, "./tailwind.config.js"),
         "postcss-advanced-variables": {},
         "postcss-nested": {},
         "postcss-percentage": {}
@@ -109,12 +106,6 @@ export default {
      */
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /(node_modules)/
-        });
         ctx.loaders.vue.transformAssetUrls.img = ["data-src", "src"];
         ctx.loaders.vue.transformAssetUrls.source = ["data-srcset", "srcset"];
       }

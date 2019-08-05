@@ -17,7 +17,6 @@
         />
       </div>
     </section>
-
     <section>
       <LazyImage data-src="cat1.jpg" aspect-ratio="16:9" object-fit="cover" fetchMode="img"/>
     </section>
